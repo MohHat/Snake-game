@@ -1,11 +1,8 @@
 #include "../include/entity.h"
 
 namespace SnakeGame {
-    Entity::Entity(olc::PixelGameEngine* pge)
-        : pge_(pge) {}
-
     Entity::Entity(olc::PixelGameEngine* pge, olc::vf2d location)
-        : pge_(pge), location_(std::move(location)) {}
+        : pge_(std::move(pge)), location_(std::move(location)) {}
 
     olc::PixelGameEngine* Entity::pge() { return pge_; }
 

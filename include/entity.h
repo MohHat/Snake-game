@@ -14,8 +14,7 @@ namespace SnakeGame {
 
     class Entity {
         public:
-            Entity(olc::PixelGameEngine*);
-            Entity(olc::PixelGameEngine*, olc::vf2d);
+            Entity(olc::PixelGameEngine*, olc::vf2d = { .0f, .0f });
 
             olc::PixelGameEngine* pge();
 
@@ -29,7 +28,7 @@ namespace SnakeGame {
             virtual void logic() = 0;
             virtual void print() = 0;
         private:
-            olc::PixelGameEngine* pge_ { nullptr }; // see https://github.com/OneLoneCoder/olcPixelGameEngine/wiki/Multiple-File-Projects
-            olc::vf2d location_ { .0f, .0f };
+            olc::PixelGameEngine* pge_; // see https://github.com/OneLoneCoder/olcPixelGameEngine/wiki/Multiple-File-Projects
+            olc::vf2d location_;
     };
 }

@@ -2,10 +2,10 @@
 
 namespace SnakeGame {
     Snake::Snake(olc::PixelGameEngine* pge)
-        : Entity(pge) {}
+        : Entity(std::move(pge)) {}
 
     Snake::Snake(olc::PixelGameEngine* pge, olc::vf2d location)
-        : Entity(pge, location) {}
+        : Entity(std::move(pge), std::move(location)) {}
 
     const Direction& Snake::getDirection() const { return snakeDirection; }
 
