@@ -1,7 +1,7 @@
 #include "../include/game.h"
 
 int main() {
-    // Compile using: g++ olcPixelGameEngine.cpp game.cpp entity.cpp snake.cpp -lX11 -lGL -lpthread -lpng -lstdc++fs -std=c++17
+    // Compile using: g++ olcPixelGameEngine.cpp game.cpp entity.cpp snake.cpp fruit.cpp -lX11 -lGL -lpthread -lpng -lstdc++fs -std=c++17
     // I'll make a makefile (no pun intended) soon
     SnakeGame::Game game;
     if (game.Construct(256, 256, 4, 4)) { game.Start(); }
@@ -16,6 +16,7 @@ namespace SnakeGame {
     }
 
     bool Game::OnUserCreate() {
+        fruit = std::make_unique<Fruit>(this);
         snake = std::make_unique<Snake>(this);
 
         return true; 
