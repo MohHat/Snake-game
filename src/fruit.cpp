@@ -1,13 +1,20 @@
 #include "../include/fruit.h"
 
 namespace SnakeGame {
-    Fruit::Fruit(olc::PixelGameEngine* pge)
-        : Entity(std::move(pge)) {}
+    Fruit::Fruit(olc::PixelGameEngine* pge, const std::unique_ptr<Snake>* snake)
+        : Entity(std::move(pge)), snake_(std::move(snake)) {}
 
-    Fruit::Fruit(olc::PixelGameEngine* pge, olc::vf2d location)
-        : Entity(std::move(pge), std::move(location)) {}
+    void Fruit::logic() {
+        if(sqrt(
+            (snake_->get()->getX() - getX()) * (snake_->get()->getX() - getX()) + 
+            (snake_->get()->getY() - getY()) * (snake_->get()->getY() - getY())
+        ) < 16.0f ) {
+            setX(rngRange(10, 240));
+            setY(rngRange(10, 240));
+        }
+    }
 
-    void Fruit::logic() {}
-
-    void Fruit::print() {}
+    void Fruit::print() {
+        pge()->FillCircle(getLocation(), 8, olc::RED);
+    }
 }

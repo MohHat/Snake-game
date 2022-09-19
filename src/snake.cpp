@@ -1,11 +1,8 @@
 #include "../include/snake.h"
 
 namespace SnakeGame {
-    Snake::Snake(olc::PixelGameEngine* pge)
-        : Entity(std::move(pge)) {}
-
-    Snake::Snake(olc::PixelGameEngine* pge, olc::vf2d location)
-        : Entity(std::move(pge), std::move(location)) {}
+    Snake::Snake(olc::PixelGameEngine* pge, const std::unique_ptr<Fruit>* fruit)
+        : Entity(std::move(pge)), fruit_(std::move(fruit)) {}
 
     const Direction& Snake::getDirection() const { return snakeDirection; }
 
