@@ -15,7 +15,7 @@ namespace SnakeGame {
     }
 
     bool Game::OnUserCreate() {
-        fruit = std::make_unique<Fruit>(this, &snake);
+        fruit = std::make_unique<Fruit>(this);
         snake = std::make_unique<Snake>(this, &fruit);
 
         return true; 
