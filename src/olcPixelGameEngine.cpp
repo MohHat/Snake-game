@@ -1,2 +1,2 @@
 #define OLC_PGE_APPLICATION
-#include "../lib/olcPixelGameEngine.h"
+#include "../lib/include/olcPixelGameEngine.h"

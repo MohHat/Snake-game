@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../lib/olcPixelGameEngine.h"
+#include "../lib/include/olcPixelGameEngine.h"
 
 namespace SnakeGame {
     // typically, macros are ALL_CAPS so I made it lowercase (https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#enum5-dont-use-all_caps-for-enumerators)
