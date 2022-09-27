@@ -50,3 +50,4 @@ bld/
 *.exe
 *.out
 *.app
+.vscode/settings.json
